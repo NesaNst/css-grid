@@ -1,0 +1,135 @@
+:root {
+    /* @todo Set CSS Variables on root scope*/
+    --blue-color: cornflowerblue;
+    --pink-color: hotpink;
+    --lavender-color: lavenderblush;
+}
+
+body {
+    background-image: url(./images/inspiration-geometry.png);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 250px auto auto;
+}
+nav {
+    grid-row: 2/3;
+}
+nav ul {
+    padding-left: 0;
+    display: grid;
+    gap: 10px;
+    margin: 10px;
+}
+nav ul li {
+    font-size: 2em;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--lavender-color);
+    list-style-type: none;
+}
+nav li a, a:visited{
+    text-decoration: none;
+    color: var(--pink-color);
+    font-family: 'Poiret One', cursive;
+}
+h1 {
+    font-family: 'Sacramento', cursive;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--blue-color);
+    
+}
+h2 {
+    font-family: 'Poiret One', cursive;
+    color: var(--blue-color);
+    font-size: 40px;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+@media screen and (min-width: 800px) {
+    body {
+        background-image: none;
+    }
+    header {
+        background-image: url(./images/inspiration-geometry.png);
+    }
+    .wrapper {
+        max-width: 1200px;
+        /* display: grid;  */
+        margin: auto;
+        grid-template-rows: 300px auto auto;
+    }
+    /*nav {
+        align-self: flex-start;
+    }*/
+    h1 {
+        text-align: left;
+        margin-top: 100px;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 3fr 1fr;   
+    }
+
+    main h2 {
+        font-size: 30px;
+    }
+
+    .gallery {
+        grid-column: 1/2;
+        grid-row: 1/8;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        border: 1px dashed pink;
+        padding: 20px;
+        margin-right: 10px;
+    }
+    .gallery h2 {
+        grid-template-rows: min-content;
+        grid-auto-rows: 150px;
+        grid-column: span 3;
+    }
+    .gallery img {
+        height: 100%;
+        object-fit: cover;
+    }
+    .gallery img:first-of-type {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .featured {
+        grid-column: 2/3;
+        background-color: var(--blue-color);
+        padding: 20px;
+        height: 1055.05px;
+    }
+    .featured h2 {
+        color: white;
+        margin: 40px 0;
+    }
+    .featured img {
+        height: 150px;
+        object-fit: cover;
+        border: 3px solid white;
+        box-sizing: content-box;
+        margin-bottom: 10px;
+    
+    }
+    nav {
+        display: grid;
+    }
+    nav ul {
+        grid-template-columns: repeat(5,1fr);
+        margin: 0 0 30px 0;
+    }
+
+}
